@@ -1,5 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AppContainer from "components/AppContainer";
+import { injectGlobal } from "styled-components";
+import reset from "styled-reset";
+import "./typography";
+import App from "components/App";
 
-ReactDOM.render(<AppContainer />, document.getElementById("root"));
+injectGlobal`
+  ${reset},
+  body {
+    background-color: #ecf0f1;
+  }
+`;
+
+ReactDOM.render(<App />, document.getElementById("root"));
